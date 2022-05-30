@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <title>Top Flight Security</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-user"></span> Clock-In</h1>
+        <a href="/affirmations" class="btn btn-default btn-sm">Overtime</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+              <h2>My Profile</h2>
+                <h3 class="profilePic"><label for="profile_pic">Choose a profile picture:</label>
+                  <input type="file" id="profile_pic" name="profile_pic" accept=".jpg, .jpeg, .png">
+                </h3>
+
+                <!-- this would be cool to continue doing so it works not sure how to approach images in Mongoose just yet -->
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <p><strong class="item">id</strong>: <%= user._id %><br></p>
+                        <p><strong class="item">email</strong>: <%= user.local.email %><br></p>
+                        <p><strong class="item">password</strong>: <%= user.local.password %></p>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Delete Account</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+              <h3 class="headingThree"> Clock-In Form</h3>
+              <% if (user.local.email) { %>
+                <form action="/messagesMood" method="POST">
+                  <label for="time">Time:</label>
+                  <input type="time" id="timeOfDrink" name="time">
+                  <p>Date<input id="date" type="date" name ="date"></p>
+                  <p>Your Name<input id="name" type="text" name ="name" placeholder="Your Name"></p>
+                  <p>Type of Guard
+                  <select class="selction" id="typeOfSecurity" name="guard">
+                    <option value="Personal Guard">Personal Guard</option>
+                    <option value="Patrol Guard">Patrol Guard</option>
+                    <option value="Business Guard">Business Guard</option>
+                    <option value="Armed Guard">Armed Guard</option>
+                  </select></p>
+                  <hr>
+                  <label class="message" for="message">Location</label>
+                  <input class="msgs" type="text" placeholder="Enter location here" name="msg">
+                  <button class="add" type="submit">Add Punch-In</button>
+              </form>
+          </div>
+      </div>
+      <div class="col-sm-6" id="second">
+        <h3>Clocked-In at</h3>
+        
+        <ul class="messages">
+          <% for(var i=0; i<mood.length; i++) {%>
+            <li class="message">
+              <span><%= mood[i].guard %></span>
+              <span><%= mood[i].name %></span>
+              <span><%= mood[i].time %></span>
+              <span><%= mood[i].date %></span>
+              <span><%= mood[i].msg %></span>
+            </li>
+          <% } %>
+        </ul>
+
+      </div>
+      <% } %>
+  </div>
+
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
