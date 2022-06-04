@@ -1,5 +1,5 @@
 # Top Flight Security
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+This website lets you sign up for an account at your job. And Clock in when you get into work with the date, time and location. Then on a seperate page you could add time-off request and call outs.
 
 ![tfs](https://user-images.githubusercontent.com/102834611/171969055-0d5ad652-3fae-46f9-8fb4-244436ebf6eb.png)
 
