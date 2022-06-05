@@ -2,7 +2,11 @@ body{
   /* padding-top:80px; */
   word-wrap:break-word;
   height: 1000px;
+  background: rgb(211, 211, 211);
+}
 
+.background{
+background: url('img/cyber.gif');
 }
 
 h3{
