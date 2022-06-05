@@ -1,7 +1,7 @@
 # Top Flight Security
 This website lets you sign up for an account at your job. And Clock in when you get into work with the date, time and location. Then on a seperate page you could add time-off request and call outs.
 
-![tfs](https://user-images.githubusercontent.com/102834611/171969055-0d5ad652-3fae-46f9-8fb4-244436ebf6eb.png)
+<img width="1437" alt="Screen Shot 2022-06-04 at 10 11 29 PM" src="https://user-images.githubusercontent.com/102834611/172032134-e1991e81-a96c-45e7-99fd-95f5026bf460.png">
 
 ## How It's Made:
 
